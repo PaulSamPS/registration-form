@@ -1,6 +1,6 @@
 import {DropDownProps} from "./DropDown.props";
 import styles from './DropDown.module.scss'
-import {SetStateAction, useState} from "react";
+import {useState} from "react";
 import cn from "classnames";
 
 const lang = [
@@ -10,7 +10,7 @@ const lang = [
     {id: 3, name: 'Испанский'},
 ]
 
-export const DropDown = ({children}: DropDownProps): JSX.Element => {
+export const DropDown = ({className}: DropDownProps): JSX.Element => {
     const [modal, setModal] = useState<boolean>(false)
     const [item, setItem] = useState<number>(0)
     const activeLang = lang.map(l => l.name)
@@ -26,7 +26,7 @@ export const DropDown = ({children}: DropDownProps): JSX.Element => {
     }
 
     return (
-        <div className={styles.dropDown}>
+        <div className={cn(styles.dropDown, className)}>
             <span className={cn(styles.selectedLang ,{
                 [styles.active]: modal
             })} onClick={handleShowModal}>
