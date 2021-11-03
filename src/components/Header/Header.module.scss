@@ -1,0 +1,22 @@
+.title {
+  color: #2C2738;
+  margin: 0;
+}
+
+.subTitle {
+  color: #2C2738;
+  display: flex;
+  line-height: 22px;
+  margin-bottom: 58px;
+  margin-top: 8px;
+
+  p {
+    margin: 0;
+  }
+
+  .signIn {
+    color: #0880AE;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+}
