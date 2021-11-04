@@ -3,12 +3,12 @@
 	margin: 0 auto;
 	padding: 20px;
 
-	color: white;
+	color: var(--white);
 
 	.label {
 		margin-bottom: 7px;
 
-		color: #756F86;
+		color: var(--gray-purple);
 
 		font-size: 16px;
 		font-weight: 500;
@@ -31,7 +31,7 @@
 			cursor: pointer;
 			text-align: center;
 
-			border: 1px solid #DBE2EA;
+			border: 1px solid var(--gray-light);
 			border-radius: 4px;
 			box-shadow: 0 4px 8px rgb(44 39 56 / 4%);
 
@@ -41,40 +41,36 @@
 		}
 
 		.activeCheckBox {
-			border: 2px solid #0880AE;
+			border: 2px solid var(--primary);
 
 			svg {
 				display: inline-block;
 			}
 		}
 
-		.activeCheckWarning {
-			border: 1px solid #FF7171;
-		}
-
 		.conditions {
-			color: #756F86;
+			color: var(--gray-purple);
 
 			font-weight: 500;
 
 			span {
 				cursor: pointer;
 
-				color: #0880AE;
+				color: var(--primary);
 			}
 		}
 	}
 
 	.disableBtn {
-		color: #B1B5BF;
-		background: #DBE2EA;
+		color: var(--gray);
+		background: var(--gray-light);
 	}
 
 	.activeBtn {
 		cursor: pointer;
 
-		color: #EBF4F8;
+		color: var(--blue-light);
 		border-radius: 6px;
-		background: #0880AE;
+		background: var(--primary);
 	}
 }

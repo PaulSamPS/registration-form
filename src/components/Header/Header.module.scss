@@ -1,7 +1,7 @@
 .title {
 	margin: 0;
 
-	color: #2C2738;
+	color: var(--dark-purple);
 }
 
 .subTitle {
@@ -10,7 +10,7 @@
 	margin-top: 8px;
 	margin-bottom: 58px;
 
-	color: #2C2738;
+	color: var(--dark-purple);
 
 	line-height: 22px;
 
@@ -23,6 +23,6 @@
 
 		cursor: pointer;
 
-		color: #0880AE;
+		color: var(--primary);
 	}
 }

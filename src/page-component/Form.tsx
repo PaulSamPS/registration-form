@@ -12,35 +12,36 @@ export interface IForm {
 
 export const Form = () => {
     const { register, handleSubmit, formState: { errors }} = useForm<IForm>()
-    const [value,setValue] = useState<string>('')
+    const [valueName,setValueName] = useState<string>('')
     const [emailValue,setEmailValue] = useState<string>('')
     const [phoneValue,setPhoneValue] = useState<string>('')
     const [activeCheck,setActiveCheck] = useState<boolean>(false)
-    const [checkWarning,setCheckWarning] = useState<boolean>(false)
 
-    const valueCheck = value !== '' && emailValue !== '' && phoneValue !== '' && activeCheck
+    const valueCheck = valueName !== '' && emailValue !== '' && phoneValue !== '' && activeCheck
 
     const regExpName = /^[А-Яа-яЁёa-zA-Z\s-]+$/g
     const regExpEmail = /[^@\s]+@[^@\s]+\.[^@\s]+/g
     const regExpPhone = /^\+?[78][-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/g
 
-    const valueName = value.replace(/[^a-zA-Zа-яА-ЯЁё -]/g,'')
+    const valName = valueName.replace(/[^a-zA-Zа-яА-ЯЁё -]/g,'')
     const valuePhone = phoneValue.replace(/[^-0-9 ()+]/g,'')
 
-    const onSubmit = (data: IForm) => console.log(data);
+    const onSubmit = (data: IForm) => {
+        if (valueCheck) {
+            console.log(data)
+            setValueName('')
+            setEmailValue('')
+            setPhoneValue('')
+            setActiveCheck(false)
+        }
+    }
 
     const handleActive = () => {
         setActiveCheck(!activeCheck)
-        setCheckWarning(false)
-    }
-
-    const condition = () => {
-       alert('Примите соглашение')
-        setCheckWarning(true)
     }
 
     return (
-        <form onSubmit={valueCheck ? handleSubmit(onSubmit): handleSubmit(condition)} className={styles.form}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <WhiteBlock>
                 <Header/>
                 <span className={styles.label}>Имя</span>
@@ -54,8 +55,8 @@ export const Form = () => {
                     error={ errors.name }
                     className='input'
                     type="text"
-                    onChange={e => setValue(e.target.value)}
-                    value={valueName}
+                    onChange={e => setValueName(e.target.value)}
+                    value={valName}
                     title={"Разрешены русские и английские буквы, пробел и символ - "}
                 />
                 <span className={styles.label}>Еmail</span>
@@ -90,8 +91,7 @@ export const Form = () => {
                 <DropDown/>
                 <div className={styles.wrapperCheckBox}>
                     <div onClick={handleActive} className={cn(styles.checkBox, {
-                        [styles.activeCheckBox]: activeCheck,
-                        [styles.activeCheckWarning]: checkWarning
+                        [styles.activeCheckBox]: activeCheck
                     })}>
                         <svg width="16" height="12" viewBox="0 0 16 12" fill="#0880AE" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.6343 0.634339C14.9467 0.32192 15.4533 0.32192 15.7657 0.634339C16.0781 0.946758 16.0781 1.45329 15.7657 1.76571L6.16569 11.3657C5.85327 11.6781 5.34673 11.6781 5.03432 11.3657L1.03431 7.36571C0.721895 7.05329 0.721895 6.54676 1.03431 6.23434C1.34673 5.92192 1.85327 5.92192 2.16569 6.23434L5.6 9.66865L14.6343 0.634339Z"/>
