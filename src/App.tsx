@@ -1,10 +1,10 @@
 import {Form} from "./page-component/Form";
 
-
-function App() {
+const App = ():JSX.Element =>{
     return (
         <Form />
   )
 }
 
-export default App;
+export default App
+

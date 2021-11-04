@@ -1,7 +1,7 @@
 import {DropDownProps} from "./DropDown.props";
-import styles from './DropDown.module.scss'
 import {useState} from "react";
 import cn from "classnames";
+import styles from './DropDown.module.scss'
 
 const lang = [
     {id: 0, name: 'Русский'},
@@ -14,7 +14,6 @@ export const DropDown = ({className}: DropDownProps): JSX.Element => {
     const [modal, setModal] = useState<boolean>(false)
     const [item, setItem] = useState<number>(0)
     const activeLang = lang.map(l => l.name)
-
 
     const handleShowModal = () => {
         setModal(!modal)

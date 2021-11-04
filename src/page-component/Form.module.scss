@@ -1,68 +1,80 @@
 .form {
-  color: white;
-  max-width: 460px;
-  margin: 0 auto;
-  padding: 20px;
+	max-width: 460px;
+	margin: 0 auto;
+	padding: 20px;
 
+	color: white;
 
-  .label {
-    color: #756F86;
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 7px;
-  }
+	.label {
+		margin-bottom: 7px;
 
-  .wrapperCheckBox {
-    display: flex;
-    margin-top: 38px;
-    margin-bottom: 40px;
-    align-items: center;
+		color: #756F86;
 
-    .checkBox {
-      width: 28px;
-      height: 28px;
-      border: 1px solid #DBE2EA;
-      border-radius: 4px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 8px rgba(44, 39, 56, 0.04);
-      text-align: center;
-      padding: 1px;
-      margin-right: 8px;
-      cursor: pointer;
+		font-size: 16px;
+		font-weight: 500;
+	}
 
-      svg {
-        display: none;
-      }
-    }
+	.wrapperCheckBox {
+		display: flex;
+		align-items: center;
 
-    .activeCheckBox {
-      border: 2px solid #0880AE;
-      svg {
-        display: inline-block;
-      }
-    }
+		margin-top: 38px;
+		margin-bottom: 40px;
 
-    .conditions {
+		.checkBox {
+			box-sizing: border-box;
+			width: 28px;
+			height: 28px;
+			margin-right: 8px;
+			padding: 1px;
 
-      color: #756F86;
-      font-weight: 500;
+			cursor: pointer;
+			text-align: center;
 
-      span {
-        color: #0880AE;
-        cursor: pointer;
-      }
-    }
-  }
+			border: 1px solid #DBE2EA;
+			border-radius: 4px;
+			box-shadow: 0 4px 8px rgb(44 39 56 / 4%);
 
-  .disableBtn {
-    background: #DBE2EA;
-    color: #B1B5BF;
-  }
+			svg {
+				display: none;
+			}
+		}
 
-  .activeBtn {
-    background: #0880AE;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #EBF4F8;
-  }
+		.activeCheckBox {
+			border: 2px solid #0880AE;
+
+			svg {
+				display: inline-block;
+			}
+		}
+
+		.activeCheckWarning {
+			border: 1px solid #FF7171;
+		}
+
+		.conditions {
+			color: #756F86;
+
+			font-weight: 500;
+
+			span {
+				cursor: pointer;
+
+				color: #0880AE;
+			}
+		}
+	}
+
+	.disableBtn {
+		color: #B1B5BF;
+		background: #DBE2EA;
+	}
+
+	.activeBtn {
+		cursor: pointer;
+
+		color: #EBF4F8;
+		border-radius: 6px;
+		background: #0880AE;
+	}
 }

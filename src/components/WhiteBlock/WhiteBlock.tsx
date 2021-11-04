@@ -1,5 +1,5 @@
-import styles from './WhiteBlock.module.scss'
 import {WhiteBlockProps} from "./WhiteBlock.props";
+import styles from './WhiteBlock.module.scss'
 
 export const WhiteBlock = ({children}: WhiteBlockProps):JSX.Element => {
     return (
